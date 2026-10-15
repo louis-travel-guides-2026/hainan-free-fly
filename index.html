@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#193b32">
+  <meta name="description" content="按星期发现北京、天津、石家庄出发的海航666/2666往返航班。在线筛选完整计划，查看起降时间、机场与有效期。爱婴撕毯。">
+  <title>海航随心飞 · 京津冀版｜爱婴撕毯</title>
+  <link rel="icon" type="image/svg+xml" href="./mark.svg">
+  <link rel="stylesheet" href="./style.css?v=20261015-clipboard">
+</head>
+<body>
+  <a class="skip" href="#main">跳到航班查询</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="./" aria-label="海航随心飞京津冀版首页"><img src="./mark.svg" alt="" width="34" height="34"><span>海航随心飞<small>京津冀版 · 666 / 2666</small></span></a>
+    <div class="header-right"><p class="header-source">依据海航官方航班查询计划整理<span>航班计划覆盖 2026.10.25—2027.03.27</span></p><span class="signature"><span class="signature-avatar"><img src="./author-avatar.jpg" alt="出品人头像" width="34" height="34" decoding="async"></span><span>出品人：<b>爱婴撕毯</b></span></span></div>
+  </header>
+  <main id="main" class="wrap">
+    <h1 class="sr-only">海航随心飞 · 京津冀版航班查询</h1>
+    <div class="query-top"><div class="tabs" role="tablist" aria-label="查询方式"><button id="tab-discover" role="tab" aria-selected="true" aria-controls="discover-panel" data-tab="discover">按星期找航班 <span>01</span></button><button id="tab-table" role="tab" aria-selected="false" aria-controls="table-panel" data-tab="table" tabindex="-1">完整航班表 <span>02</span></button></div><button class="update-link" data-dialog="about"><span class="status-dot"></span> 数据核对 2026.10.15 <span aria-hidden="true">↗</span></button></div>
+    <p class="coverage-scope">数据范围：11月23—29日代表周＋其他日期官方记录；尚未逐日核验整个航季。</p>
+    <section class="filter-panel" aria-label="筛选航班">
+      <div class="filter-row top-filters"><div class="filter-group package-group"><span class="filter-label" id="package-label">我的套餐</span><div class="segmented" role="group" aria-labelledby="package-label"><button data-package="666" aria-pressed="true">666</button><button data-package="2666" aria-pressed="false">2666</button></div></div><div class="filter-group airport-group"><span class="filter-label" id="airport-label">可接受的机场</span><div class="airport-options" role="group" aria-labelledby="airport-label"><button data-airport="PEK" aria-pressed="true"><span class="check-mark"></span>首都 <small>PEK</small></button><button data-airport="PKX" aria-pressed="true"><span class="check-mark"></span>大兴 <small>PKX</small></button><button data-airport="TSN" aria-pressed="false"><span class="check-mark"></span>天津 <small>TSN</small></button><button data-airport="SJW" aria-pressed="false"><span class="check-mark"></span>石家庄 <small>SJW</small></button></div></div></div>
+      <div id="week-filters" class="week-filters"><div class="filter-row weekday-row"><span class="filter-label" id="out-label"><span class="direction-symbol">↗</span>出发星期</span><div id="out-days" class="weekday-options" role="group" aria-labelledby="out-label"></div><span class="weekday-hint">可多选</span></div><div class="filter-row weekday-row"><span class="filter-label" id="in-label"><span class="direction-symbol">↙</span>返回星期</span><div id="in-days" class="weekday-options" role="group" aria-labelledby="in-label"></div><span class="weekday-hint">可多选</span></div></div>
+      <div class="filter-foot"><div class="filter-notes"><label><input id="include-uncertain" type="checkbox">显示待确认计划</label><label><input id="show-expired" type="checkbox">显示已到期计划</label></div><button class="text-button reset" id="reset">重置筛选 <span aria-hidden="true">↺</span></button></div>
+    </section>
+    <section id="discover-panel" role="tabpanel" aria-labelledby="tab-discover">
+      <div class="result-toolbar"><div class="coverage-options" role="group" aria-label="方向覆盖"><button data-coverage="all" aria-pressed="true">全部</button><button data-coverage="both" aria-pressed="false">往返都有</button><button data-coverage="out" aria-pressed="false">仅去程</button><button data-coverage="in" aria-pressed="false">仅回程</button></div><label class="search-box"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="destination-search" type="search" placeholder="搜索目的地 / 航班号" aria-label="搜索目的地或航班号"></label></div>
+      <section class="destination-picker" aria-labelledby="destination-picker-title"><div class="destination-picker-label"><span id="destination-picker-title">可选目的地 <b id="available-place-count">0</b></span><span class="destination-picker-hint">可多选 · 不选则显示全部</span></div><div id="destination-options" class="destination-options" role="group" aria-label="多选目的地"></div></section>
+      <div class="results-heading"><div><h2 id="results-title">寻找合适的远方</h2><p id="results-context">选择机场与星期，即时查看结果</p></div><button id="share" class="share-button"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 10h6M10 7v6M6 3H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2M11 3h6v6M17 3l-7 7"/></svg>分享查询</button></div>
+      <p class="result-tip"><span class="status-dot"></span> 以下为当前星期和机场条件下的计划；有效期显示在每班下方，可跨京津冀机场往返。</p>
+      <div id="destinations" class="destinations"><div class="loading">正在载入已核对的航班计划…</div></div>
+    </section>
+    <section id="table-panel" role="tabpanel" aria-labelledby="tab-table" hidden>
+      <div class="table-toolbar"><label class="search-box"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg><input id="table-search" type="search" placeholder="搜索城市、机场或航班号" aria-label="搜索完整航班表"></label><div class="table-filter-status"><span id="column-filter-status">点击列表头，可像 Excel 一样筛选</span><button id="clear-column-filters" class="text-button">清除列筛选 ↺</button></div></div>
+      <div class="results-heading"><div><h2 id="table-title">完整航班计划</h2><p id="table-context"></p></div><button id="table-share" class="share-button">分享查询 ↗</button></div>
+      <p class="table-help">每列标题旁的下拉按钮支持搜索、多选和排序。不同列的筛选会同时生效；表格可左右滑动。</p>
+      <div class="flight-table-wrap"><table class="flight-table" aria-label="航班计划在线筛选表"><thead id="flight-table-head"></thead><tbody id="flight-table-body"></tbody></table></div><div id="table-empty"></div>
+    </section>
+    <aside class="data-note"><span class="note-mark">i</span><p>这里展示已收录的航班计划，套餐按起飞时段判断。<strong>班期须与每班有效期同时满足</strong>，产品不可用日期、实时余票及实际预订请以官方为准。</p><button class="text-button" data-dialog="about">数据说明 ↗</button></aside>
+  </main>
+  <footer class="wrap"><div class="footer-top"><div class="footer-brand">海航随心飞 · 京津冀版<span>从京津冀出发，留一点时间给远方。</span></div><div class="footer-links"><button data-dialog="rules">套餐规则</button><button data-dialog="about">数据与更新</button><a href="https://m.hnair.com/hnams/plusMember/ableAirlineQuery" target="_blank" rel="noopener noreferrer">官方查询 ↗</a></div></div><div class="footer-bottom"><span>独立整理 · 非航空公司官方网站</span><span class="maker">爱婴撕毯 <span>制作</span></span><span>2026—2027 冬春航季</span></div></footer>
+  <div id="journey" class="journey" hidden></div>
+  <div id="column-filter" class="column-filter" role="dialog" aria-labelledby="column-filter-title" hidden><div class="column-filter-heading"><b id="column-filter-title"></b><button id="close-column-filter" aria-label="关闭列筛选">×</button></div><div class="column-sort-actions"><button data-column-sort="asc">升序 ↑</button><button data-column-sort="desc">降序 ↓</button></div><button id="clear-this-column" class="column-clear">清除此列筛选</button><label class="column-search-label"><span class="sr-only">搜索列选项</span><input id="column-option-search" type="search" placeholder="搜索此列…"></label><div class="column-choice-tools"><button id="column-select-all">全选</button><button id="column-select-none">清空</button><span id="column-selected-count"></span></div><div id="column-options" class="column-options" role="group" aria-label="列筛选选项"></div><div class="column-filter-footer"><button id="cancel-column-filter">取消</button><button id="apply-column-filter">应用筛选</button></div></div>
+  <dialog id="info-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span class="eyebrow">HNA PLUS · JINGJINJI</span><button id="dialog-close" class="icon-button" aria-label="关闭详情">×</button></div><h2 id="dialog-title"></h2><div id="dialog-body"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div><div id="announcement" class="sr-only" aria-live="polite"></div>
+  <script type="module" src="./app.mjs?v=20261015-clipboard"></script>
+</body>
+</html>
